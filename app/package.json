@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run watch",
+    "watch": "./node_modules/.bin/pm2 start ./lib/index.js --no-daemon --watch",
+    "migrate": "./node_modules/.bin/knex --knexfile ./lib/config/database.js migrate:latest",
+    "seed": "./node_modules/.bin/knex --knexfile ./lib/config/knex.js seed:run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "knex": "^2.3.0",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "pg": "^8.8.0",
+    "pm2": "^5.2.2",
+    "restify": "^8.6.1"
+  }
+}
